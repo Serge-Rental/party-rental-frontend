@@ -1,0 +1,153 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EAEDED;
+    margin: auto;
+    /* align-items: center; */
+    width: 100%;
+    /* margin-top: 50px; */
+}
+.home-head {
+    animation: imageAnimation 10s linear infinite 0s;
+    animation-timing-function: ease-in-out;
+    /* margin-left: 60px; */
+    background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhhcHB5JTIwZXZlbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    color: whitesmoke;
+  
+    /* background-image: url('https://mauipride.org/wp-content/uploads/2013/12/New-Years-Eve-Party-Slider-Background.jpg') */
+  }
+  .home-head h1 {
+    /* position: absolute; */
+    margin-top: 200px;
+    /* margin-left: 160px; */
+    font-size: 50px;
+    color: whitesmoke;
+    font-weight: bolder;
+  }
+ 
+  @keyframes imageAnimation {
+    0% {
+      background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhhcHB5JTIwZXZlbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+      /* opacity: 0; */
+    }
+    8% {
+      background-image: url('https://media-api.theknot.com/images/0b4ad1c3-0c73-41a8-ab72-4989d618a052');
+      /* opacity: 1; */
+    }
+    /* 17% {
+      opacity: 1
+    }
+    25% {
+      opacity: 0
+    }
+    100% {
+      opacity: 0
+    } */
+  }
+  /*animate slide show   */
+  
+  .home-middle-text {
+    max-width: 1050px;
+    font-family: 'Lobster', cursive;
+    vertical-align: middle;
+    margin-left: 140px;
+    text-align: left;
+    font-size: 50px;
+    color: black;
+    font-weight: bolder;
+    padding: 30px;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* height: 100px; */
+    align-content: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    /* margin: auto; */
+    /* margin-top: 15px; */
+    /* margin-bottom: 20px; */
+    /* padding: 30px; */
+    /* margin-left: 43px; */
+  }
+  
+  .flex-item {
+    background-color: black;
+    /* width: 647px;
+    height: 400px; */
+    margin: 0px 15px 0px 0px;
+    border-radius: 8px;
+    order: 1;
+    align-content: center;
+    /* margin: 30px; */
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 8px;
+  }
+  .flex-item > p {
+    margin-left: 8px;
+  }
+  .flex-item > img{
+    width:248px;
+    height: 248px;
+    transition: all 0.3s;
+    transform: scale(1);
+    object-fit: cover;
+  }
+  .flex-item > img:hover{
+    transform: scale(1.1);
+  }
+  .welcome-paragraphe{
+    max-width: 1180px;
+    margin: auto;
+    padding: 30px;
+    
+  }
+  .welcome-paragraphe > p{
+    border-left: 2px solid black;
+    padding: 8px;
+    width: 100%;
+    text-align: justify;
+    color: #333;
+  }
+
+  .home-events{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: 500px;
+    background-image: url("https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+    background-size:cover;
+    background-position: center top;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+ 
+  .home-events > div{
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    margin-right: 40px;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 8px;
+  }
+  .home-events > div > p{
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+

@@ -1,0 +1,136 @@
+.checkout{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items: center; */
+    margin: auto auto;
+    background-color: #EAEDED;
+    
+    
+}
+.form-center{
+    display:flex;
+    justify-content: center;
+}
+.checkout > form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1450px;
+
+}
+input {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #d1d2d2;
+    background-color: transparent;
+    width: 350px;
+    border-radius: 4px;
+    padding: 10px 15px;
+    /* margin-bottom: 10px; */
+    margin: 15px;
+    font-size: 14px;
+  }
+  input:focus, select:focus{
+    outline: none;
+    /* border: 1px solid #e6ecec; */
+  }
+.error-control {
+    border: 1px solid red
+  }
+  select{
+    width: 200px;
+    font-size: 14px;
+    margin: 15px;
+    height: 40px;
+  }
+  
+  label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  p[role="alert"] {
+    color: red;
+    font-style: italic;
+    font-size: small;
+  }
+  
+  button[type="submit"],
+  input[type="submit"] {
+    width: 100%;
+    background: #ec5990;
+    color: white;
+    border-radius: 4px;
+    /* text-transform: uppercase; */
+    border: none;
+    margin-top: 40px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 100;
+    /* letter-spacing: 10px; */
+  }
+  
+  button[type="submit"]:hover,
+  input[type="submit"]:hover {
+    background: #bf1650;
+  }
+.user-info {
+    display: flex;
+    flex-direction: column;
+   
+}
+.order-info {
+    display: flex;
+    flex-direction: column;
+}
+.shipping, .payment{
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    margin: 15px;
+    padding: 15px;
+}
+.payment > p {
+  margin-bottom: 15px;
+}
+/* .row{
+    display: flex;
+} */
+.order{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    margin: 15px;
+    padding: 10px;
+}
+.review-items{
+    background-color: white;
+    width: 300px;
+    max-height: 900px;
+    height: 700px;
+    margin: 15px;
+    padding: 15px;
+    overflow: auto;
+  
+}
+.checkout-item{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border-bottom: 1px solid #E7E7E7;
+  margin-bottom: 10px;
+  padding: 10px;
+ 
+}
+/* .checkout-item img {
+  width: 150px;
+  height: 150px;
+  margin-right: 15px;
+} */

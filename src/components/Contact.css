@@ -1,0 +1,83 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+    background-color: #EAEDED;
+    height:100vh;
+}
+.contact-image-text{
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    margin: auto auto;
+    padding: 20px;
+    max-width: 1650px;
+    
+}
+.contact-image{
+    width: 800px;
+    background-color: #d1d2d2;
+    background-image: url("https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.contact-image-text > .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* margin: auto auto; */
+    padding: 15px;
+    background-color: white;
+    width: 600px;
+
+}
+.contact-form > input, textarea {
+    /* display: inline-block; */
+    box-sizing: border-box;
+    border: 1px solid #d1d2d2;
+    background-color: transparent;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px 15px;
+    /* margin-bottom: 10px; */
+    margin: 15px;
+    font-size: 14px;
+  }
+  input:focus, select:focus, textarea:focus{
+    outline: none;
+    /* border: 1px solid #e6ecec; */
+  }
+.error-control {
+    border: 1px solid red
+  }
+  /* [role=main] {
+    text-align: left;
+  } */
+  .contact-form > button[type="submit"],
+  input[type="submit"] {
+    width: 100%;
+    background: #082f13;
+    color: white;
+    border-radius: 4px;
+    text-transform: uppercase;
+    border: none;
+    /* margin: 15px; */
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 100;
+    /* letter-spacing: 10px; */
+  }
+  
+  button[type="submit"]:hover,
+  input[type="submit"]:hover {
+    background: #5cd07b;
+  }
+  .contact-sucess{
+    color: #082f13;
+    font-style: italic;
+  }
