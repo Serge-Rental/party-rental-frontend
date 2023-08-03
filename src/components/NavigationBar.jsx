@@ -3,29 +3,30 @@
 import React from "react";
 import "./NavigationBar.css";
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function NavigationBar({ cart }) {
   let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
   return (
     <nav className="nav">
-      <div className="bran-name">Party & Events Rentals</div>
+      <div className="bran-name"><Link to="/">Party & Events Rentals</Link></div>
 
       <div className="nav-links">
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/products">Products</a>
+            <Link to="/products">Products</Link>
           </li>
           <li>
-            <a href="contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <a href="cart" className="shopping-icon">
+            <Link to="/cart" className="shopping-icon">
                 <FaShoppingCart className="icon" /> <span>{totalItems}</span> 
               
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

@@ -194,15 +194,15 @@ function Checkout({cart}) {
             {/* {!loading ? <Spinner /> :
             <> */}
             <p>
-                Subtotal {`(${totalItems})`} : <span>${totalPrice}</span>
+                <strong>Subtotal {`(${totalItems})`}</strong> : <span>${totalPrice}</span>
               </p> 
-              <p>Shipping: FREE</p>
+              <p><strong>Shipping</strong>: FREE</p>
             {/* </>
               
             } */}
           </div>
           <div className="review-items">
-            <p>Review item and shipping</p>
+            <p>Review yours items</p>
             {loading ? <Spinner /> :
             <ul>
               {cart.map(renderItem)}

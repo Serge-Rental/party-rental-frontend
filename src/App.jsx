@@ -10,6 +10,7 @@ import Cart from './components/Cart'
 import SingleProduct from './components/SingleProduct'
 import { useState, useEffect } from 'react'
 import PageNotFound from './components/PageNotFound'
+import OrderConfirmation from './components/OrderConfirmation'
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -66,6 +67,7 @@ function App() {
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/cart' element={<Cart cart={cart} updateQuantity={updateQuantity} deleteItem={deleteItem}/>}/>
             <Route path='/checkout' element={<Checkout cart={cart} />}/>
+            <Route path='/order-confirmed' element={<OrderConfirmation cart={cart} />}/>
           </Routes>
         </main>
         

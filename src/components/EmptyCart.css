@@ -1,0 +1,44 @@
+.empty-cart {
+    display: flex;
+    align-content: center;
+    background-color: white;
+    margin: 60px auto;
+    column-gap: 15px;
+    border: 1px solid black;
+    height: 400px;
+    overflow: hidden;
+    border-radius:8px;
+
+}
+.empty-cart-img {
+    width: 100%;
+    background-image: url("https://www.pngkit.com/png/detail/322-3224362_sign-in-empty-cart-icon.png");
+    background-position: center;
+    background-size: cover;
+}
+.message{
+    width: 800px;
+    padding: 50px;
+    margin:auto;
+}
+.message > h1 {
+    margin-bottom: 20px;
+}
+.message > a {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    color:black;
+}
+.message >  a:link {
+    text-decoration: none;
+}
+
+.message > a:visited {
+    text-decoration: none;
+}
+.message > a:hover {
+    background-color: black;
+    color: white;
+}

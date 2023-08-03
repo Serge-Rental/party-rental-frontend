@@ -5,6 +5,7 @@
     /* align-items: center; */
     margin: auto auto;
     background-color: #EAEDED;
+    height: 100vh;
     
     
 }
@@ -93,7 +94,7 @@ input {
 .shipping, .payment{
     background-color: white;
     width: 800px;
-    height: 500px;
+    height: auto;
     margin: 15px;
     padding: 15px;
 }
@@ -106,8 +107,8 @@ input {
 .order{
     background-color: white;
     width: 300px;
-    height: 300px;
-    margin: 15px;
+    /* height: 300px; */
+    margin: 15px auto;
     padding: 10px;
 }
 .review-items{
@@ -117,8 +118,7 @@ input {
     height: 700px;
     margin: 15px;
     padding: 15px;
-    overflow: auto;
-  
+    overflow: auto; 
 }
 .checkout-item{
   display: flex;

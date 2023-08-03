@@ -1,29 +1,45 @@
 .contact{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    margin: auto auto;
+    margin: auto;
+    width: 100%;
     background-color: #EAEDED;
     height:100vh;
+    padding: 20px;
+}
+
+.contact > h1{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family:  'Lobster', cursive;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
 }
 .contact-image-text{
     display: flex;
-    height: 500px;
+    flex-direction: column;
+    width: 100%;
+    /* height: 500px; */
     justify-content: center;
-    margin: auto auto;
+    /* flex-wrap: wrap; */
+    /* margin: auto; */
     padding: 20px;
-    max-width: 1650px;
+    max-width: 1000px;
+    /* margin-top: 70px; */
     
 }
-.contact-image{
+
+/* .contact-image{
     width: 800px;
     background-color: #d1d2d2;
     background-image: url("https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
+} */
 .contact-image-text > .contact-form {
     display: flex;
     flex-direction: column;
@@ -33,8 +49,11 @@
     /* margin: auto auto; */
     padding: 15px;
     background-color: white;
-    width: 600px;
-
+    width: 100%;
+}
+.errors-container {
+  display: flex;
+  column-gap: 15px;
 }
 .contact-form > input, textarea {
     /* display: inline-block; */
@@ -52,7 +71,7 @@
     outline: none;
     /* border: 1px solid #e6ecec; */
   }
-.error-control {
+.error-style {
     border: 1px solid red
   }
   /* [role=main] {
@@ -80,4 +99,8 @@
   .contact-sucess{
     color: #082f13;
     font-style: italic;
+  }
+  .bckgr-col{
+    background-color: white;
+    max-width: 1650px;
   }

@@ -1,17 +1,19 @@
 /** @format */
 
-import React, {useMemo, useState} from "react";
+import React, { useMemo, useState } from "react";
 import useFetchAll from "../servives/useFetchAll";
 import "./Cart.css";
 import Spinner from "./Spinner";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import EmptyCart from "./EmptyCart";
+
 
 function Cart({ cart, updateQuantity, deleteItem }) {
   const urls = cart.map((i) => `products/${i.id}`);
- 
-  const { data: products, loading, error } = useFetchAll(urls, cart)
-  
+
+  const { data: products, loading, error } = useFetchAll(urls, cart);
+
   const navigate = useNavigate();
 
   function renderItem(itemInCart) {
@@ -51,47 +53,51 @@ function Cart({ cart, updateQuantity, deleteItem }) {
       </li>
     );
   }
- 
+
   if (loading) return <Spinner />;
   if (error) throw error;
-  
-  
+
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
   const totalPrice = products.reduce((total, p) => {
     // find matching quantity
-    let prodQty = 0; 
+    let prodQty = 0;
     for (let i = 0; i < cart.length; i++) {
       const element = cart[i];
-      if (parseInt(element.id) === p.product.id){
-        prodQty += element.quantity
+      if (parseInt(element.id) === p.product.id) {
+        prodQty += element.quantity;
       }
     }
-   
-    return total + (p.product.price * prodQty);
+
+    return total + p.product.price * prodQty;
   }, 0);
 
   return (
     <div className="cart">
-      <section>
-        <h1>Shopping Cart</h1>
-        <ul>{cart.map(renderItem)}</ul>
-      </section>
-      <div className="subtotal">
-        <p>
-          Subtotal {`(${totalItems})`} : 
-          <span>${totalPrice}</span>
-        </p>
-        <p>Shipping: FREE</p>
-        <button
-          disabled={cart.length === 0}
-          className="btn-cart btn-primary-cart"
-          onClick={() => {
-            navigate("/checkout");
-          }}
-        >
-          Proceed to checkout
-        </button>
-      </div>
+      {cart.length > 0 ? (
+        <div className="cart-content">
+          <section>
+            <h1>Shopping Cart</h1>
+            <ul>{cart.map(renderItem)}</ul>
+          </section>
+          <div className="subtotal">
+            <p>
+              Subtotal {`(${totalItems})`} :<span>${totalPrice}</span>
+            </p>
+            <p>Shipping: FREE</p>
+            <button
+              disabled={cart.length === 0}
+              className="btn-cart btn-primary-cart"
+              onClick={() => {
+                navigate("/checkout");
+              }}
+            >
+              Proceed to checkout
+            </button>
+          </div>
+        </div>
+      ) : (
+        <EmptyCart />
+      )}
     </div>
   );
 }

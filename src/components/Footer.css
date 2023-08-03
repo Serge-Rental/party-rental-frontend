@@ -26,6 +26,6 @@
     padding: 1rem;
     display: block;
 }
-.footer-social:hover{
-    background-color: #555;
+.faceb-icon, .insta-icon {
+    font-size: 40px;
 }
