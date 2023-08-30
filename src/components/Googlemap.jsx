@@ -12,7 +12,7 @@ const Googlemap = () => {
     <div className="map">
       {!isLoaded ? (
         <h1>Loading...</h1>
-      ) : (
+      ) : ( 
         <GoogleMap
           mapContainerClassName="map-container"
           center={center}

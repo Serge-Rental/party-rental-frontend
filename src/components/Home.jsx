@@ -2,7 +2,6 @@
 
 import React from "react";
 import "./Home.css";
-import banner from "./Banner"
 import Banner from "./Banner";
 
 function Home(props) {

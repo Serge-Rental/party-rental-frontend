@@ -1,47 +1,47 @@
 import React, {useState, useEffect} from 'react';
 import { CardElement, useElements, useStripe, PaymentElement,
-    LinkAuthenticationElement, } from "@stripe/react-stripe-js";
+    LinkAuthenticationElement, AddressElement } from "@stripe/react-stripe-js";
 import "./PaymentForm.css"
 
-const PaymentForm = ({shipping}) => {
-    const stripe = useStripe();
+const PaymentForm = ({cart, emptyCart}) => {
+  const stripe = useStripe();
   const elements = useElements();
 
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-//   useEffect(() => {
-//     if (!stripe) {
-//       return;
-//     }
+  useEffect(() => {
+    if (!stripe) {
+      return;
+    }
 
-//     const clientSecret = new URLSearchParams(window.location.search).get(
-//       "payment_intent_client_secret"
-//     );
-//     console.log("sct", clientSecret)
+    const clientSecret = new URLSearchParams(window.location.search).get(
+      "payment_intent_client_secret"
+    );
+    console.log("sct", clientSecret)
 
-//     if (!clientSecret) {
-//       return;
-//     }
+    if (!clientSecret) {
+      return;
+    }
     
-//     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-//       switch (paymentIntent.status) {
-//         case "succeeded":
-//           setMessage("Payment succeeded!");
-//           break;
-//         case "processing":
-//           setMessage("Your payment is processing.");
-//           break;
-//         case "requires_payment_method":
-//           setMessage("Your payment was not successful, please try again.");
-//           break;
-//         default:
-//           setMessage("Something went wrong.");
-//           break;
-//       }
-//     });
-//   }, [stripe]);
+    stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
+      switch (paymentIntent.status) {
+        case "succeeded":
+          setMessage("Payment succeeded!");
+          break;
+        case "processing":
+          setMessage("Your payment is processing.");
+          break;
+        case "requires_payment_method":
+          setMessage("Your payment was not successful, please try again.");
+          break;
+        default:
+          setMessage("Something went wrong.");
+          break;
+      }
+    });
+  }, [stripe]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -53,7 +53,8 @@ const PaymentForm = ({shipping}) => {
         }
     
         setIsLoading(true);
-    
+
+        
         const { error } = await stripe.confirmPayment({
           elements,
           confirmParams: {
@@ -61,6 +62,15 @@ const PaymentForm = ({shipping}) => {
             return_url: "http://localhost:5173/order-confirmed",
           },
         });
+        // .then((result)=>{
+        //   if (!result.error){
+        //     emptyCart();
+        //     console.log("cart", cart)
+        //   }
+        // });
+
+        
+        
     
         // This point will only be reached if there is an immediate error when
         // confirming the payment. Otherwise, your customer will be redirected to
@@ -72,21 +82,27 @@ const PaymentForm = ({shipping}) => {
         } else {
           setMessage("An unexpected error occurred.");
         }
+        console.log("message", message)
     
         setIsLoading(false);
+       
       };
     
       const paymentElementOptions = {
         layout: "tabs"
       }
+      const addressElement = {
+        mode: "shipping"
+      }
     return (
         <form id="payment-form" onSubmit={handleSubmit}>
+        <AddressElement id="address-element" options={addressElement}/>
         <LinkAuthenticationElement
           id="link-authentication-element"
           onChange={(e) => setEmail(e.target.value)}
         />
         <PaymentElement id="payment-element" options={paymentElementOptions} />
-        <button disabled={isLoading || !stripe || !elements || shipping.length == 0} id="submit">
+        <button disabled={isLoading || !stripe || !elements} id="submit">
           <span id="button-text">
             {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
           </span>

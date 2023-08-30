@@ -6,6 +6,7 @@ import Spinner from './Spinner';
 import 'swiper/swiper-bundle.min.css';
 import './Carousel.css'
 
+
 const Carousel = ({category}) => {
     const {data: data, error, isLoading} = useFetch("products")
     
@@ -17,18 +18,13 @@ const Carousel = ({category}) => {
     return (
         <div className="carousel">
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
-                spaceBetween={30}
-                slidesPerView={6}
-                centeredSlides={true}
-                centerInsufficientSlides={true}
-                loop={true}
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={50}
+                slidesPerView={3}
+                navigation
                 loopedSlidesLimit={false}
                 pagination={{ clickable: true }}
-                crollbar={{ draggable: true }}
-                navigation
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
+                scrollbar={{ draggable: true }}
                 >
                     {filterProducts.map((product) => {
                        return <SwiperSlide key={product.id}>

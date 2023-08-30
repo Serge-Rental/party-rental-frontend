@@ -17,11 +17,7 @@ function Products() {
   const handleActive = (e) => {
     e.preventDefault();
     setActive(e.target.value);
-  }
-  
-  
-  
-  
+  };
 
   function renderProduct(p) {
     return (
@@ -40,8 +36,9 @@ function Products() {
 
   let filterByCategory = [];
   let filter = data.products.filter((product) => product.category === active);
-  active === "All" || !active ? filterByCategory = data.products : filterByCategory = filter;
-
+  active === "All" || !active
+    ? (filterByCategory = data.products)
+    : (filterByCategory = filter);
 
   return (
     <div className="products">
@@ -51,15 +48,17 @@ function Products() {
             <button
               key={idx}
               type="button"
-              className={active === button.name ? "button-active":"default-style"}
-              onClick = {handleActive}
+              className={
+                active === button.name ? "button-active" : "default-style"
+              }
+              onClick={handleActive}
               value={button.name}
             >
               {button.name}
             </button>
           );
         })}
-        
+
         <div className="input-wrapper">
           <FaSearch id="search-icon" />
           <input

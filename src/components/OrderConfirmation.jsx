@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './OrderConfirmation.css'
 import { FaCheckCircle } from "react-icons/fa";
 
-function OrderConfirmation() {
+function OrderConfirmation({cart, emptyCart}) {
+   
+    // cart.length ? emptyCart(): null
+    
+   
+    // console.log("emptyCart", cart)
     return (
         <div className="confirmation">
             <div className="confirm-content">

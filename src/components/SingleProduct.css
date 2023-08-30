@@ -1,7 +1,10 @@
 .single-product{
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     justify-content: center;
+    /* margin: auto auto; */
+    /* height: 100vh; */
 }
 .single-product > p {
     text-align: center;
@@ -12,7 +15,7 @@
 .product-container {
     display: flex;
     justify-content: center;
-    /* align-items:center; */
+    align-items:center;
     max-width: 1000px;
     max-height: 1000px;
     text-align: left;
@@ -89,4 +92,12 @@ fieldset[disabled] .btn {
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+.carousel-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+
 }

@@ -66,8 +66,8 @@ function App() {
             <Route path='/products/:id' element={<SingleProduct addToCart={addToCart}/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/cart' element={<Cart cart={cart} updateQuantity={updateQuantity} deleteItem={deleteItem}/>}/>
-            <Route path='/checkout' element={<Checkout cart={cart} />}/>
-            <Route path='/order-confirmed' element={<OrderConfirmation cart={cart} />}/>
+            <Route path='/checkout' element={<Checkout cart={cart} emptyCart={emptyCart} />}/>
+            <Route path='/order-confirmed' element={<OrderConfirmation cart={cart} emptyCart={emptyCart} />}/>
           </Routes>
         </main>
         

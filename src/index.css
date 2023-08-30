@@ -4,5 +4,22 @@
   padding: 0;
   font-family: inter, sans-serif;
   line-height: 20px;
-  
+}
+/* #root{
+  position: relative;
+  min-height: 100vh;
+} */
+body{
+  min-height: 100vh;
+  min-width: 100%;
+  background-color: #eaeded;
+}
+::selection {
+  color: none;
+  background: none;
+}
+/* For Mozilla Firefox */
+::-moz-selection {
+  color: none;
+  background: none;
 }

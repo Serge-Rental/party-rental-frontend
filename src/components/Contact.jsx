@@ -14,6 +14,7 @@ function Contact(props) {
     formState: { errors, isSubmitSuccessful },
   } = useForm();
   const [contactInfo, setContactInfo] = useState([]);
+  const [success, setSucess] = useState(false)
 
   const onSubmit = (data) => {
     console.log("contact-form data", data);
@@ -27,13 +28,16 @@ function Contact(props) {
         email: "",
         message: "",
       });
+      setSucess(true)
     }
+    
   }, [formState, contactInfo, reset]);
   //   console.log("form", contactInfo.length)
+  console.log("error", errors)
   return (
     <div className="contact">
       <h1>We want to hear from you</h1>
-      <div className="contact-image-text">
+      <div className="contact-form-map">
         
         {/* <div className="contact-image"></div> */}
         <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
@@ -97,7 +101,7 @@ function Contact(props) {
                         Confirm and Save
                     </button> */}
           {
-            isSubmitSuccessful && (
+            success && (
               <p className="contact-sucess">Message Sent Successfuly</p>
             )
             // <p className="contact-sucess">Oops! Something went wrong</p>
@@ -117,6 +121,8 @@ function Contact(props) {
           </div>
           <Googlemap />
         </div>
+
+       
       </div>
       {/* <div className="home-contact bckgr-col">
       

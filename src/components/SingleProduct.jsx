@@ -43,7 +43,10 @@ function SingleProduct(props) {
         </div>
       </div>
       <p>Similar Items You Might Like</p>
-      <Carousel category={product.category}/>
+      <div className="carousel-container">
+        <Carousel category={product.category}/>
+      </div>
+      
       
      
     </div>

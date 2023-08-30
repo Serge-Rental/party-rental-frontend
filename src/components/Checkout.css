@@ -2,14 +2,12 @@
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
-    /* align-items: center; */
-    margin: auto auto;
-    background-color: #EAEDED;
-    height: 100vh;
-    
+    /* align-content: center; */
+    /* margin: auto auto; */
+    background-color: #EAEDED; 
     
 }
-.form-center{
+/* .form-center{
     display:flex;
     justify-content: center;
 }
@@ -28,13 +26,11 @@ input {
     width: 350px;
     border-radius: 4px;
     padding: 10px 15px;
-    /* margin-bottom: 10px; */
     margin: 15px;
     font-size: 14px;
   }
   input:focus, select:focus{
     outline: none;
-    /* border: 1px solid #e6ecec; */
   }
 .error-control {
     border: 1px solid red
@@ -69,19 +65,17 @@ input {
     background: #ec5990;
     color: white;
     border-radius: 4px;
-    /* text-transform: uppercase; */
     border: none;
     margin-top: 40px;
     padding: 10px;
     font-size: 16px;
     font-weight: 100;
-    /* letter-spacing: 10px; */
   }
   
   button[type="submit"]:hover,
   input[type="submit"]:hover {
     background: #bf1650;
-  }
+  } */
 .user-info {
     display: flex;
     flex-direction: column;
@@ -91,7 +85,7 @@ input {
     display: flex;
     flex-direction: column;
 }
-.shipping, .payment{
+.payment{
     background-color: white;
     width: 800px;
     height: auto;

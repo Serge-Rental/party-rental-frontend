@@ -7,16 +7,15 @@ import PaymentForm from "./PaymentForm"
 const PUBLIC_KEY = "pk_test_51N0T1wB9C4gwKyEV7VjH2LL51ogZwz729gpatejayTfypodoNZqdo6uxCiW8vrP33MG8KsdMLH8rKq7iAWH95XeY00QcjDdn79"
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
-const StripeContainer = ({shipping}) => {
+const StripeContainer = ({totalPrice, emptyCart, cart}) => {
     const [clientSecret, setClientSecret] = useState('');
-
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         fetch("http://localhost:3005/payment", {
           method: "POST",
           mode:"cors",
-        //   headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({}),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ items: [{ id: "xl-tshirt", amount: totalPrice }]}),
         })
           .then(async(res) => {
             var {clientSecret} = await res.json();
@@ -25,22 +24,21 @@ const StripeContainer = ({shipping}) => {
         })
         //   .then((data) => console.log("dta", data))
         //     .then((data) => {setClientSecret(data)});
-      }, []);
+      }, [totalPrice]);
       
     const appearance = {
         theme: 'stripe',
       };
       const options = {
         clientSecret,
-        appearance,
+        appearance
       };
-      console.log("clientSecret-down", clientSecret)
     
     return (
         <div>
              {clientSecret && (
             <Elements options={options} stripe={stripeTestPromise}>
-                <PaymentForm  shipping={shipping}/>
+                <PaymentForm  emptyCart={emptyCart} cart={cart}/>
             </Elements>
         )} 
         </div>
