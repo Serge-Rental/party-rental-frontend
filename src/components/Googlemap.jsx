@@ -1,11 +1,10 @@
 import React from "react";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useMemo } from "react";
-import env from"react-dotenv"
 
 const Googlemap = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCW5pCt2joORsS-s9WplOyjsRg3PL1B68s",
+    googleMapsApiKey: import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY,
   });
   const center = useMemo(() => ({ lat: 40.730610, lng: -73.935242 }), []);
   return (

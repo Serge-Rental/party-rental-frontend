@@ -4,7 +4,7 @@ import { loadStripe } from "@stripe/stripe-js"
 import PaymentForm from "./PaymentForm"
 
 // This is your test publishable API key.
-const PUBLIC_KEY = "pk_test_51N0T1wB9C4gwKyEV7VjH2LL51ogZwz729gpatejayTfypodoNZqdo6uxCiW8vrP33MG8KsdMLH8rKq7iAWH95XeY00QcjDdn79"
+const PUBLIC_KEY = import.meta.env.VITE_STRIPE_PUBLIC_KEY;
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 const StripeContainer = ({totalPrice, emptyCart, cart}) => {

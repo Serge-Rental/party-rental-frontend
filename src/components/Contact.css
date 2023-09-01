@@ -59,6 +59,10 @@
   column-gap: 15px;
 }
 
+.errors-container > p {
+  color: red;
+}
+
 .contact-form>input,
 textarea {
   /* display: inline-block; */

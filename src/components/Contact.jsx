@@ -4,6 +4,8 @@ import "./Home.css";
 import "./Googlemap.css";
 import { useForm } from "react-hook-form";
 import Googlemap from "./Googlemap";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Contact(props) {
   const {
@@ -14,11 +16,12 @@ function Contact(props) {
     formState: { errors, isSubmitSuccessful },
   } = useForm();
   const [contactInfo, setContactInfo] = useState([]);
-  const [success, setSucess] = useState(false)
+  const notify = () => toast("Message Sent Successfuly")
 
   const onSubmit = (data) => {
     console.log("contact-form data", data);
     setContactInfo(data);
+
   };
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
@@ -28,12 +31,14 @@ function Contact(props) {
         email: "",
         message: "",
       });
-      setSucess(true)
+      notify()
     }
     
   }, [formState, contactInfo, reset]);
   //   console.log("form", contactInfo.length)
   console.log("error", errors)
+
+  
   return (
     <div className="contact">
       <h1>We want to hear from you</h1>
@@ -97,15 +102,7 @@ function Contact(props) {
             aria-invalid={errors.message ? "true" : "false"}
           />
           <input type="submit" />
-          {/* <button type="submit">
-                        Confirm and Save
-                    </button> */}
-          {
-            success && (
-              <p className="contact-sucess">Message Sent Successfuly</p>
-            )
-            // <p className="contact-sucess">Oops! Something went wrong</p>
-          }
+          <ToastContainer />
         </form>
         <div className="home-contact bckgr-col">
           <div className="general-contact">
