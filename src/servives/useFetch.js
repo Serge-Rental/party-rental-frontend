@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-const baseUrl = import.meta.env.VITE_API_BASE_URL//"http://localhost:3005/"
+const baseUrl = import.meta.env.VITE_API_BASE_URL; //"http://localhost:3005/"
 // custom hook for fetching data
 export default function useFetch(api) {
 
