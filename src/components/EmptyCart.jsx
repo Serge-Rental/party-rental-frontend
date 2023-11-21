@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './EmptyCart.css'
 
 function EmptyCart() {
@@ -7,7 +8,7 @@ function EmptyCart() {
             <div className="empty-cart-img"></div>
             <div className="message">
                 <h1>Your cart is Empty</h1>
-                <a href="/products/All">Back to our products</a>
+                <Link to="/products/All">Back to our products</Link>
             </div>
            
 
