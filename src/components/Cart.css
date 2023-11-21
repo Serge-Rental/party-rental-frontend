@@ -15,6 +15,7 @@
   justify-content: center;
   gap: 30px;
   padding: 40px;
+  max-width: 1200px;
   width: 100%;
 }
 
@@ -73,14 +74,14 @@ section > h1{
   cursor: pointer;
 }
 .btn-primary-cart {
-  color: #282424;
-  background-color: #97d856;
+  color: #ffffff;
+  background-color: #4FA941;
 }
 
 .btn-cart {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: 400;
+  font-weight: 600;
   width: 100%;
   text-align: center;
   vertical-align: middle;
@@ -91,7 +92,7 @@ section > h1{
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.42857143;
   border-radius: 10px;
   -webkit-user-select: none;
@@ -109,4 +110,12 @@ fieldset[disabled] .btn {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-  
+
+ /* mobile  */
+ @media (max-width: 768px){
+  .cart-content{
+    flex-direction: column;
+    gap: 0px;
+
+  }
+ }

@@ -28,6 +28,7 @@ const PaymentForm = ({cart, emptyCart}) => {
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
+          emptyCart()
           setMessage("Payment succeeded!");
           break;
         case "processing":
@@ -62,12 +63,7 @@ const PaymentForm = ({cart, emptyCart}) => {
             return_url: "http://localhost:5173/order-confirmed",
           },
         });
-        // .then((result)=>{
-        //   if (!result.error){
-        //     emptyCart();
-        //     console.log("cart", cart)
-        //   }
-        // });
+       
 
         
         

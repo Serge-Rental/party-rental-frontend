@@ -34,14 +34,6 @@
   
 }
 
-/* .contact-image{
-    width: 800px;
-    background-color: #d1d2d2;
-    background-image: url("https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
 .contact-form-map>.contact-form {
   display: flex;
   flex-direction: column;
@@ -94,7 +86,7 @@ textarea:focus {
 .contact-form>button[type="submit"],
 input[type="submit"] {
   width: 100%;
-  background: #082f13;
+  background: #4FA941;
   color: white;
   border-radius: 4px;
   text-transform: uppercase;
@@ -102,17 +94,18 @@ input[type="submit"] {
   /* margin: 15px; */
   padding: 10px;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 600;
   /* letter-spacing: 10px; */
 }
 
 button[type="submit"]:hover,
 input[type="submit"]:hover {
-  background: #5cd07b;
+  background: #418c35;
+  cursor: pointer;
 }
 
 .contact-sucess {
-  color: #082f13;
+  color: #418c35;
   font-style: italic;
 }
 

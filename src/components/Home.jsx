@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import Banner from "./Banner";
 
@@ -8,8 +9,8 @@ function Home(props) {
   return (
     <div className="home">
       <div className="home-head">
-          {/* <h1>Welcome To SERGE Event & Party Rentals</h1> */}
-          {/* <h2>
+        {/* <h1>Welcome To SERGE Event & Party Rentals</h1> */}
+        {/* <h2>
                 RENT Tents | Chairs | Tables | Lightning | Speackers | Dj
                 Equipments
               </h2>
@@ -18,25 +19,33 @@ function Home(props) {
       <Banner />
       <div className="content">
         <div className="home-middle-text">
-          <p>Product Top Categories</p>
+          <p>Products Top Categories</p>
         </div>
 
         <div className="flex-container">
           <div className="flex-item">
-            <p>Tents</p>
-            <img src="https://media-api.theknot.com/images/0b4ad1c3-0c73-41a8-ab72-4989d618a052" />
+            <Link to="products/Tents" className="categoryLink">
+              <p>Tents</p>
+              <img src="https://media-api.theknot.com/images/0b4ad1c3-0c73-41a8-ab72-4989d618a052" />
+            </Link>
           </div>
           <div className="flex-item">
-            <p>Lightning</p>
-            <img src="https://i.etsystatic.com/23583625/r/il/db0e81/2475508712/il_794xN.2475508712_iv1d.jpg" />
+            <Link to="products/Lightning" className="categoryLink">
+              <p>Lightning</p>
+              <img src="https://i.etsystatic.com/23583625/r/il/db0e81/2475508712/il_794xN.2475508712_iv1d.jpg" />
+            </Link>
+          </div>
+          <div className="flex-item" >
+            <Link to="products/Seating" className="categoryLink">
+              <p>Tables</p>
+              <img src="https://cdn0.weddingwire.com/vendor/731463/3_2/640/jpg/1476798924-417360c3691eaa25-ERG_pic_1.webp" />
+            </Link>
           </div>
           <div className="flex-item">
-            <p>Tables</p>
-            <img src="https://cdn0.weddingwire.com/vendor/731463/3_2/640/jpg/1476798924-417360c3691eaa25-ERG_pic_1.webp" />
-          </div>
-          <div className="flex-item">
-            <p>Sound</p>
-            <img src="https://i.ytimg.com/vi/tPZjasYw6_A/maxresdefault.jpg" />
+            <Link to="products/Sound" className="categoryLink">
+              <p>Sound</p>
+              <img src="https://i.ytimg.com/vi/tPZjasYw6_A/maxresdefault.jpg" />
+            </Link>
           </div>
         </div>
         <div className="welcome-paragraph">

@@ -5,14 +5,15 @@ import "./Products.css";
 import useFetch from "../servives/useFetch";
 import Spinner from "./Spinner";
 import PageNotFound from "./PageNotFound";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { buttons } from "../buttons.json";
 
 function Products() {
   const { data: data, error, isLoading } = useFetch("products");
+  let { category } = useParams();
   //console.log("data", data)
-  const [active, setActive] = useState();
+  const [active, setActive] = useState(category);
 
   const handleActive = (e) => {
     e.preventDefault();
@@ -25,8 +26,8 @@ function Products() {
         <Link to={`${p.id}`}>
           <img src={p.imageURL} alt={p.name} />
         </Link>
-        <h3>{p.name}</h3>
-        <p>${p.price}</p>
+        <p id="product-name">{p.name}</p>
+        <p id="product-price">${p.price}</p>
       </div>
     );
   }

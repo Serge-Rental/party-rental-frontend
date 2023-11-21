@@ -8,10 +8,10 @@
 .banner-content{
     display: flex;
     justify-content: center;
-    min-width: 1200px;
+    min-width: 1250px;
     height: 400px;
     margin: 30px auto;
-    background-color: orange;
+    background-color: #F47920;
 }
 .call-to-action{
     width: 100%;
@@ -35,10 +35,29 @@
 }
 .call-to-action > a:hover{
     background-color: black;
-    color: orange;
+    color: #F47920;
 }
 .banner-image {
     width: 100%;
     background-image: url("https://images.unsplash.com/photo-1634313945702-56a8073970bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHllc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60");
     background-size: cover;
 }
+
+  /* mobile  */
+  @media (max-width: 768px){
+    /* .banner{
+        height: 600px;
+    } */
+    .banner-content{
+        flex-direction: column;
+        min-width: 100%;
+        height: auto;
+        margin: auto;
+    }
+    .call-to-action{
+        height: 200px;
+    }
+    .banner-image{
+        height: 400px;
+    }
+  }

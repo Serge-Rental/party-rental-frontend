@@ -42,3 +42,19 @@
     background-color: black;
     color: white;
 }
+
+ /* mobile  */
+ @media (max-width: 768px){
+    .empty-cart{
+        flex-direction: column-reverse;
+        height: auto;
+        justify-content: center;
+        width: 100%;
+    }
+    .empty-cart-img {
+        height: 200px;
+    }
+    .message{
+        height: 200px;
+    }
+ }

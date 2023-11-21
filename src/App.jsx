@@ -62,15 +62,14 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/pageError' element={<PageNotFound/>}/>
-            <Route path='/products' element={<Products/>}/>
-            <Route path='/products/:id' element={<SingleProduct addToCart={addToCart}/>}/>
+            <Route path='/products/:category' element={<Products/>}/>
+            <Route path='/products/:category/:id' element={<SingleProduct addToCart={addToCart}/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/cart' element={<Cart cart={cart} updateQuantity={updateQuantity} deleteItem={deleteItem}/>}/>
             <Route path='/checkout' element={<Checkout cart={cart} emptyCart={emptyCart} />}/>
-            <Route path='/order-confirmed' element={<OrderConfirmation cart={cart} emptyCart={emptyCart} />}/>
+            <Route path='/order-confirmed' element={<OrderConfirmation />}/>
           </Routes>
         </main>
-        
         <Footer />
     </div>
   )
