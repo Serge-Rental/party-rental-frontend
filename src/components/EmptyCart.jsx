@@ -7,7 +7,7 @@ function EmptyCart() {
             <div className="empty-cart-img"></div>
             <div className="message">
                 <h1>Your cart is Empty</h1>
-                <a href="/products">Back to our products</a>
+                <a href="/products/All">Back to our products</a>
             </div>
            
 

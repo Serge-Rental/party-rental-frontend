@@ -1,5 +1,5 @@
 import  {useState, useEffect} from 'react'
-const baseUrl = import.meta.env.VITE_API_BASE_URL//"http://localhost:3005/"
+const baseUrl = import.meta.env.VITE_API_BASE_URL; //"http://localhost:3005/"
 
 export default function useFetchAll(urls, cart){
     const [data, setData] = useState(null);
