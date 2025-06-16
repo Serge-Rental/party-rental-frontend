@@ -70,7 +70,7 @@ function Home(props) {
             <p>Corporate events</p>
           </div>
           <div className="weedings">
-            <p>Weedings</p>
+            <p>Weddings</p>
           </div>
           <div className="private-party">
             <p>Private parties</p>
